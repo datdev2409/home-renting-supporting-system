@@ -1,0 +1,33 @@
+pipeline:
+  identifier: Build_home_renting_supporting_system_1695222485822
+  name: Build home-renting-supporting-system
+  orgIdentifier: default
+  projectIdentifier: homerentingsupportingsystem
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1694593567027
+        repoName: datdev2409/home-renting-supporting-system
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: echo
+                  name: echo
+                  spec:
+                    command: echo hello world
+                  timeout: ""
+                  type: Run
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
